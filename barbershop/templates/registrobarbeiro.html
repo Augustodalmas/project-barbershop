@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+]{%block content%}
+<head>
+    <title>Registro de Usuário</title>
+    <link rel="stylesheet" href="{% static 'teste.css' %}">
+</head>
+<body>
+    <div class="container-register-barber my-4"> <!-- Margem para espaçar o container -->
+        <div class="card-register-barber">
+            <div class="card-header-register-barber text-center">
+                <h2>Registro de Barbeiros</h2>
+            </div>
+            <div class="card-body-register-barber">
+                <!-- Botão de Voltar -->
+                <a href="{% url 'detailBarbershops' modelo_principal.pk %}" class="btn btn-secondary mb-3">Voltar</a>
+                
+                <!-- Formulário de Registro -->
+                <form method="post" class="login-form-register-barber">
+                    {% csrf_token %}
+                    <div class="form-group-register-barber">
+                        {{ form.as_p }} <!-- Usando as_p para já vir formatado -->
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+{% endblock %}

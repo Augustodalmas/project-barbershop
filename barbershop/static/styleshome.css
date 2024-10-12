@@ -1,0 +1,176 @@
+body {
+    background-image: url('imagens/fundoembacado.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 100%; /* Ajuste para garantir que o body ocupe toda a altura da janela */
+    margin: 5%;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    height: 45px;
+}
+
+.home-link {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    height: 25px;
+    margin-right: 10px;
+    filter: invert(100%) sepia(100%) saturate(200%) hue-rotate(200deg); /* Ajuste a cor aqui */
+}
+
+.profile-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.card-grid a{
+    text-decoration: none;
+    color: white;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px;
+    font-size: 20px;
+    color: coral;
+}
+
+.card p {
+    margin: 0 15px 15px;
+    font-size: 16px;
+}
+
+.barbearia-details {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.barbearia-details button {
+    background-color: coral;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.barbearia-details button:hover {
+    background-color: #ff7043;
+}
+
+.barbearia-info img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-bar {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination .step-links {
+    display: inline-block;
+}
+
+.pagination .step-links a,
+.pagination .step-links .current {
+    display: inline;
+    margin: 0 10px; /* Ajuste a margem conforme necessário para espaçar os links */
+    text-decoration: none;
+    color: white;
+}
+
+.account a{
+    text-decoration: none;
+    color: white;
+}
+
+.barber-logo-inicial{
+    width: 1000px;
+    height: 100px;
+}

@@ -1,0 +1,27 @@
+{% block content %}
+  <div class="container mt-4">
+    <h2>Horários Reservados</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Barbeiro</th>
+          <th>Cliente</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Barbearia</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for schedule in schedules %}
+          <tr>
+            <td>{{ schedule.Responsible }}</td>
+            <td>{{ schedule.client }}</td>
+            <td>{{ schedule.date }}</td>
+            <td>{{ schedule.hours }}</td>
+            <td>{{ schedule.barbershop}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,366 @@
+body {
+    background-image: url('imagens/fundoembacado.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Ajuste para garantir que o body ocupe toda a altura da janela */
+    margin: 0; /* Margem ajustada para 0 para evitar espaço indesejado */
+    display: flex; /* Adicionado para permitir centralização */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    transition: top 0.3s; /* Adiciona uma transição suave */
+    margin-bottom: 70px;
+}
+
+
+.navbar-container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    height: 45px;
+}
+
+.home-link {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    height: 25px;
+    margin-right: 10px;
+    filter: invert(100%) sepia(100%) saturate(200%) hue-rotate(200deg); /* Ajuste a cor aqui */
+}
+
+.profile-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin: 10px;
+}
+
+.card-grid a {
+    text-decoration: none;
+    color: white;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px;
+    font-size: 20px;
+    color: coral;
+}
+
+.card p {
+    margin: 0 15px 15px;
+    font-size: 16px;
+}
+
+.barbearia-details {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.barbearia-details button {
+    background-color: coral;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.barbearia-details button:hover {
+    background-color: #ff7043;
+}
+
+.barbearia-info img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    padding: 50px;
+    display: flex;
+}
+
+#search {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination .step-links {
+    display: inline-block;
+}
+
+.pagination .step-links a,
+.pagination .step-links .current {
+    display: inline;
+    margin: 0 10px; /* Ajuste a margem conforme necessário para espaçar os links */
+    text-decoration: none;
+    color: white;
+}
+
+.account a {
+    text-decoration: none;
+    color: white;
+}
+
+.barber-logo-inicial {
+    width: 1000px;
+    height: 100px;
+}
+
+.container {
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.801); /* Adiciona uma cor de fundo semi-transparente ao container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
+
+h3 .fas {
+    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    vertical-align: middle; /* Alinhe o ícone verticalmente com o texto */
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 340px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+.container a button {
+    margin-left: 20px;
+    background-color: red;
+    text-align: center;
+    width: 100px;
+}
+
+a:-webkit-any-link {
+    color: rgb(255, 255, 255);
+}
+
+.icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px; 
+    height: 100px; 
+}
+
+.container-register-barber {
+    width: 100%;
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+
+.card-register-barber {
+    border: 1px solid #e0e0e0; 
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffffc8; 
+    padding: 20px; 
+}
+
+
+.card-header-register-barber {
+    background-color: #6e6e6ebd;
+    border-radius: 0.25rem;
+    border-bottom: 1px solid #e0e0e0; 
+    padding: 10px; 
+}
+
+
+.card-body-register-barber {
+    padding: 15px; 
+}
+
+
+.btn {
+    display: inline-block; 
+    padding: 0.375rem 0.75rem; 
+    font-size: 1rem; 
+    font-weight: 400; 
+    line-height: 1.5; 
+    border-radius: 0.25rem; 
+    text-align: center; 
+    cursor: pointer; 
+}
+
+
+.btn-primary {
+    color: #fff; 
+    background-color: #007bff; 
+    border: 1px solid #007bff; 
+    width: 100%; 
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3; 
+}
+
+
+.btn-secondary {
+    color: #fff; 
+    background-color: #6c757d; 
+    border: 1px solid #6c757d; 
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; 
+    border-color: #545b62; 
+}
+
+.form-group-register-barber {
+    margin-bottom: 1rem; 
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%; 
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da; 
+    border-radius: 0.25rem; 
+    transition: border-color 0.15s ease-in-out;
+}
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #80bdff; 
+    outline: 0; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+h2 {
+    margin: 0; 
+    font-size: 1.5rem; 
+}
+
+.login-form-register-barber {
+    margin: 0; 
+}
+
+
+button[type="submit"] {
+    margin-top: 10px; 
+}
+
+label{
+    color: black;
+}

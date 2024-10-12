@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearias</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'imagens/iconebarber.png' %}" type="icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="{% static 'imagens/iconebarber.png' %}" alt="Logo" class="navbar-logo">
+            <a href="{% url 'listBarbershops' %}" class="home-link">Barbearias</a>
+            <div class="navbar-profile">
+                {% if user.is_authenticated %}
+                    <img src="{% static 'imagens/perfil.png' %}" alt="Perfil" class="profile-icon">
+                    <a href="{% url 'perfil' 'Usuario' user.pk %}" class="profile-link">Perfil</a>
+
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <div class="account">
+                    <a href="{% url 'createUser' %}">Registrar-se</a>
+                    <a href="{% url 'loginUser' %}">Logar-se</a></div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+<script>
+        let lastScrollTop = 0; // Armazena a posição de rolagem anterior
+const navbar = document.querySelector('.navbar'); // Seleciona a navbar
+
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Posição de rolagem atual
+
+    if (currentScroll > lastScrollTop) {
+        // Rolando para baixo
+        navbar.style.top = '-70px'; // Ajuste o valor conforme a altura da navbar
+    } else {
+        // Rolando para cima
+        navbar.style.top = '0';
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+});
+
+</script>
+</body>
+</html>
+

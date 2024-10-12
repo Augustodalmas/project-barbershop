@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'imagens/iconebarber.png' %}" type="icon">
+</head>
+<body>
+    <a href="{% url 'listBarbershops' %}"><img src="{% static 'imagens/iconebarber.png' %}" class="icon"></a>
+        <div class="container">
+            <form class="login-form" action="#" method="post">
+                {% csrf_token %}
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="username">Usuário:</label>
+                    {{ login_view.username}}
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha:</label>
+                    {{ login_view.password}}
+                </div>
+                <button type="submit">Entrar</button>
+                <p>Não tem uma conta? <a href="{% url 'createUser' %}">Registre-se</a></p>
+            </form>
+        </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Horário</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Agendar Horário</h2>
+
+            <!-- Verifica se há erros gerais no formulário -->
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <p>{{ form.non_field_errors }}</p>
+                </div>
+            {% endif %}
+
+        <!-- Formulário POST para enviar agendamento -->
+        <form method="POST" id="schedule-form">
+            {% csrf_token %}
+            
+            <!-- Campo de Data -->
+            <div class="mb-3">
+                <label for="date" class="form-label">Data do Agendamento</label>
+                <input type="date" class="form-control {% if form.date.errors %}is-invalid{% endif %}" id="date" name="date">
+                <!-- Exibe erros para o campo date -->
+                {% if form.date.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.date.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            
+
+            <!-- Seção de Barbeiros -->
+            <div class="mb-3">
+                <label for="barber" class="form-label">Barbeiro</label>
+                <select class="form-select {% if form.Responsible.errors %}is-invalid{% endif %}" id="barber" name="Responsible" required>
+                    <option value="" disabled selected>Selecione um barbeiro</option>
+                    {% for barber in barbers %}
+                        <option value="{{ barber.id }}">{{ barber.username }}</option>
+                    {% endfor %}
+                </select>
+                <!-- Exibe erros para o campo Responsible -->
+                {% if form.Responsible.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.Responsible.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Seção de Horários -->
+            <div class="mb-3">
+                <label for="hours" class="form-label">Horário</label>
+                <select class="form-select {% if form.hours.errors %}is-invalid{% endif %}" id="hours" name="hours" required>
+                    <option value="" disabled selected>Selecione um horário</option>
+                    {% for time in available_times %}
+                        <option value="{{ time }}">{{ time|time:"H:i" }}</option>
+                    {% endfor %}
+                </select>
+                <!-- Exibe erros para o campo hours -->
+                {% if form.hours.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.hours.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Botão de Agendar -->
+            <button type="submit" class="btn btn-primary">Agendar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
