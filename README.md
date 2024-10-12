@@ -23,3 +23,12 @@ E rode o servidor:
 ```
 Python manage.py runserver
 ```
+
+Para ver a listagem de barbearias acesse a url 
+```
+http://127.0.0.1:8000/list
+```
+E para adicionar itens no sistema, faça pelo admin, acessando:
+```
+http://127.0.0.1:8000/admin
+```
