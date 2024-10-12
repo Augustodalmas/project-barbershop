@@ -1,9 +1,9 @@
 # project-barbershop
 Um projeto de barbearia - Em desenvolvimento
 
-Para rodar o app: 
-Primeiramente tenha o Python instalado.
-Após isso, crie uma Venv dentro do projeto
+Para rodar o app: <br>
+Primeiramente tenha o Python instalado.<br>
+Após isso, crie uma Venv dentro do projeto<br>
 ```
 Python -m venv venv
 ```
